@@ -1,0 +1,10 @@
+
+E-Commerce Website
+
+
+at least 5 pages:
+1) Home
+2) About
+3) Category
+4) Product Site
+5) Contact Us

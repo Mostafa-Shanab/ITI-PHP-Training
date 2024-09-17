@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project E-Commerce</title>
+    <style>
+        :root {
+            --blue: #6995B1;
+            --white: #ffffff;
+        }
+
+        ::selection {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0px;
+        }
+
+        a.navbar-brand {
+            float: left;
+            height: 50px;
+            padding: 15px 15px;
+            font-size: 18px;
+            line-height: 20px;
+            text-decoration: none;
+            color: orangered;
+            font-family: cursive;
+            font-weight: 700;
+
+        }
+
+        nav.main-navigation {
+            position: relative;
+        }
+
+        nav.main-navigation ul.nav-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+            text-align: right;
+        }
+
+        .nav-list li.nav-list-item {
+            display: inline-block;
+            line-height: 40px;
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        a.nav-link {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            color: #404040;
+        }
+
+        .col_white_amrc {
+            color: #FFF;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #263238;
+            min-height: 250px;
+            padding: 10px 0px 25px 0px;
+        }
+
+        .pt2 {
+            padding-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #CCC;
+            padding-bottom: 0px;
+            margin-bottom: 8px;
+        }
+
+        .mb10 {
+            padding-bottom: 15px;
+        }
+
+        .footer_ul_amrc {
+            margin: 0px;
+            list-style-type: none;
+            font-size: 14px;
+            padding: 0px 0px 10px 0px;
+        }
+
+        .footer_ul_amrc li {
+            padding: 0px 0px 5px 0px;
+        }
+
+        .footer_ul_amrc li a {
+            color: #CCC;
+        }
+
+        .footer_ul_amrc li a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .fleft {
+            float: left;
+        }
+
+        .padding-right {
+            padding-right: 10px;
+        }
+
+        .footer_ul2_amrc {
+            margin: 0px;
+            list-style-type: none;
+            padding: 0px;
+        }
+
+        .footer_ul2_amrc li p {
+            display: table;
+        }
+
+        .footer_ul2_amrc li a:hover {
+            text-decoration: none;
+        }
+
+        .footer_ul2_amrc li i {
+            margin-top: 5px;
+        }
+
+        .bottom_border {
+            border-bottom: 1px solid #323f45;
+            padding-bottom: 20px;
+        }
+
+        .foote_bottom_ul_amrc {
+            list-style-type: none;
+            padding: 0px;
+            display: table;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-bottom: 10px;
+            margin-left: auto;
+        }
+
+        .foote_bottom_ul_amrc li {
+            display: inline;
+        }
+
+        .foote_bottom_ul_amrc li a {
+            color: #999;
+            margin: 0 12px;
+        }
+
+        .social_footer_ul {
+            display: table;
+            margin: 15px auto 0 auto;
+            list-style-type: none;
+        }
+
+        .social_footer_ul li {
+            padding-left: 20px;
+            padding-top: 10px;
+            float: left;
+        }
+
+        .social_footer_ul li a {
+            color: #CCC;
+            border: 1px solid #CCC;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .social_footer_ul li i {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        #search {
+            outline: none;
+            border: none;
+            display: inline-block
+        }
+
+        #burgundy {
+            color: rgb(153, 40, 59)
+        }
+
+        #orange,
+        select,
+        .btn {
+            color: orange
+        }
+
+        .fa-search {
+            font-size: 20px;
+            padding: 10px;
+            margin-bottom: 3px;
+            padding-right: 20px
+        }
+
+        .search-nav-item {
+            height: 40px
+        }
+
+        nav {
+            padding: 0px 100px
+        }
+
+        .fa-user-o,
+        .fa-shopping-cart {
+            font-size: 20px;
+            padding: 4px
+        }
+
+        .form-group {
+            margin-bottom: 5px
+        }
+
+        label {
+            padding-left: 10px
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0
+        }
+
+        h6 {
+            margin-bottom: 0px
+        }
+
+        #sort {
+            outline: none;
+            border: none
+        }
+
+        .btn {
+            border: 1px solid orange;
+            border-radius: 10px;
+            background-color: #fff
+        }
+
+        .btn:hover {
+            color: #fff;
+            background-color: orange
+        }
+
+        .card-body {
+            padding: 8px
+        }
+
+        .sign {
+            width: 25px;
+            height: 25px
+        }
+
+        .discount {
+            border: 1px solid orange;
+            border-radius: 5px;
+            width: 65px;
+            position: absolute;
+            top: 2%
+        }
+
+        @media(min-width:1200px) {
+            #search {
+                width: 300px;
+                padding: 5px;
+                padding-left: 20px
+            }
+
+            .search-nav-item {
+                margin-left: 400px;
+                width: 350px
+            }
+
+            .fa-user-o {
+                margin-left: 300px
+            }
+
+            .text {
+                display: none
+            }
+
+            .fa-user-o,
+            .fa-shopping-cart {
+                font-size: 20px;
+                padding-left: 20px
+            }
+
+            #sidebar {
+                width: 30%;
+                padding: 20px;
+                float: left
+            }
+
+            #products {
+                width: 70%;
+                padding: 10px;
+                margin: 0;
+                float: right
+            }
+
+            .card {
+                width: 300px;
+                height: 330px;
+                border: none
+            }
+
+            .card-img-top {
+                width: 295px;
+                height: 200px;
+                border-radius: 10px
+            }
+
+            del {
+                padding-right: 2px
+            }
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+        }
+
+        @media(min-width:992px) and (max-width:1199px) {
+            #search {
+                width: 300px;
+                padding: 5px;
+                padding-left: 20px
+            }
+
+            .search-nav-item {
+                margin-left: 200px;
+                width: 350px
+            }
+
+            .fa-user-o {
+                margin-left: 160px
+            }
+
+            .text {
+                display: none
+            }
+
+            #sidebar {
+                width: 30%;
+                padding: 20px;
+                float: left
+            }
+
+            #products {
+                width: 70%;
+                padding: 10px;
+                margin: 0;
+                float: right
+            }
+
+            .card {
+                width: 200px;
+                height: 330px;
+                border: none
+            }
+
+            .card-img-top {
+                width: 200px;
+                height: 200px;
+                border-radius: 10px
+            }
+
+            .fa-plus,
+            .fa-minus {
+                font-size: 12px
+            }
+
+            .sign {
+                height: 25px
+            }
+
+            .price {
+                width: 99px
+            }
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+        }
+
+        @media(min-width:768px) and (max-width:991px) {
+            #search {
+                width: 300px;
+                padding: 5px;
+                padding-left: 20px
+            }
+
+            .search-nav-item {
+                margin-left: 60px;
+                width: 350px
+            }
+
+            .fa-user-o {
+                margin-left: 80px
+            }
+
+            .text {
+                display: none
+            }
+
+            #sidebar {
+                width: 35%;
+                padding: 20px;
+                float: left
+            }
+
+            #products {
+                width: 65%;
+                padding: 10px;
+                margin: 0;
+                float: right
+            }
+
+            .card {
+                border: none
+            }
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+        }
+
+        @media(min-width:576px) and (max-width:767px) {
+            .text {
+                display: none
+            }
+
+            .search-nav-item {
+                margin-left: 35px;
+                width: 270px
+            }
+
+            #search {
+                width: 240px;
+                padding: 5px;
+                padding-left: 20px
+            }
+
+            .fa-search {
+                padding: 3px;
+                font-size: 18px
+            }
+
+            #sidebar {
+                width: 40%;
+                padding: 20px;
+                float: left
+            }
+
+            #products {
+                width: 60%;
+                padding: 10px;
+                margin: 0;
+                float: right
+            }
+
+            .card {
+                border: none
+            }
+
+            #off {
+                padding-left: 2px
+            }
+
+            #sorting span,
+            #res {
+                font-size: 14px
+            }
+
+            .filter,
+            #mobile-filter {
+                display: none
+            }
+        }
+
+        @media(max-width:575px) {
+            .search-nav-item {
+                margin: 0;
+                width: 100%;
+                margin-top: 10px
+            }
+
+            #search {
+                width: 80%;
+                padding-left: 10px;
+                margin-top: 10px;
+                padding-right: 10px
+            }
+
+            .fa-search {
+                padding: 10px;
+                font-size: 18px
+            }
+
+            #sidebar {
+                display: none
+            }
+
+            .filter {
+                margin-left: 70%;
+                margin-top: 2%
+            }
+
+            #sorting,
+            #res {
+                font-size: 12px;
+                margin-top: 2%
+            }
+        }
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <table style="width: 96%; font-size: 20px; color: #8D8D8D; margin: 5px 0 5px 55px;">
+        <tr>
+            <td>Let's Talk! <b>+57 444 11 00 35</b></td>
+            <td>Free shipping on a purchase value of $200</td>
+            <td style="user-select: none;"><a href="" style="color: #8D8D8D; padding-right: 9px;"><i
+                        class="fa-regular fa-user"></i></a> <a href="" style="color: #8D8D8D; padding-right: 9px;"><i
+                        class="fa-regular fa-cart-plus"></i></a> <a href=""
+                    style="color: #8D8D8D; padding-right: 9px;"><i class="fa-regular fa-heart"></i></a> <a href=""
+                    style="color: #8D8D8D; padding-right: 9px;"><i class="fa-solid fa-magnifying-glass"></i></a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav class="main-navigation">
+        <div class="navbar-header animated fadeInUp" style="margin-left: 35px;">
+            <a class="navbar-brand" href="home.html"><img src="https://themewagon.github.io/ultras/images/main-logo.png"
+                    alt=""></a>
+        </div>
+        <ul class="nav-list" style="margin-right: 55px;">
+            <li class="nav-list-item">
+                <a href="home.html" class="nav-link">Home</a>
+                <style>
+                    .nav-link:hover {
+                        color: #6995B1;
+                    }
+                </style>
+            </li>
+            <li class="nav-list-item">
+                <a href="about.html" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="category.html" class="nav-link" style="color: #6995B1;">Category</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="product_site.html" class="nav-link">Product Site</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="contact_us.html" class="nav-link">Contact Us</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <br><br><br><br><br>
+
+    <div class="filter bg-white"> <button class="btn btn-default" type="button" data-toggle="collapse"
+            data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filters<span
+                class="fa fa-filter pl-1"></span></button>
+    </div>
+    <div id="mobile-filter" class="bg-white">
+        <p class="pl-sm-0 pl-2"> Home | <b>All Breads</b></p>
+        <div class="border-bottom pb-2 ml-2">
+            <h4 id="burgundy">Filters</h4>
+        </div>
+        <div class="py-2 border-bottom ml-3">
+            <h6 class="font-weight-bold">Categories</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+                <div class="form-group"> <input type="checkbox" id="artisan"> <label for="artisan">Fresh Artisan
+                        Breads</label> </div>
+                <div class="form-group"> <input type="checkbox" id="breakfast"> <label for="breakfast">Breakfast
+                        Breads</label> </div>
+                <div class="form-group"> <input type="checkbox" id="healthy"> <label for="healthy">Healthy
+                        Breads</label>
+                </div>
+            </form>
+        </div>
+        <div class="py-2 border-bottom ml-3">
+            <h6 class="font-weight-bold">Accompainments</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+                <div class="form-group"> <input type="checkbox" id="tea"> <label for="tea">Tea Cakes</label> </div>
+                <div class="form-group"> <input type="checkbox" id="cookies"> <label for="cookies">Cookies</label>
+                </div>
+                <div class="form-group"> <input type="checkbox" id="pastries"> <label for="pastries">Pastries</label>
+                </div>
+                <div class="form-group"> <input type="checkbox" id="dough"> <label for="dough">Cookie Dough</label>
+                </div>
+                <div class="form-group"> <input type="checkbox" id="choco"> <label for="choco">Chocolates</label> </div>
+            </form>
+        </div>
+        <div class="py-2 ml-3">
+            <h6 class="font-weight-bold">Top Offers</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+                <div class="form-group"> <input type="checkbox" id="25off"> <label for="25">25% off</label> </div>
+                <div class="form-group"> <input type="checkbox" id="5off"> <label for="5off" id="off">5% off on artisan
+                        breads</label> </div>
+            </form>
+        </div>
+    </div>
+    <!-- Sidebar filter section -->
+    <section id="sidebar" class="bg-white">
+        <p> Home | <b>All Breads</b></p>
+        <div class="border-bottom pb-2 ml-2">
+            <h4 id="burgundy">Filters</h4>
+        </div>
+        <div class="py-2 border-bottom ml-3">
+            <h6 class="font-weight-bold">Categories</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+                <div class="form-group"> <input type="checkbox" id="artisan"> <label for="artisan">Fresh Artisan
+                        Breads</label> </div>
+                <div class="form-group"> <input type="checkbox" id="breakfast"> <label for="breakfast">Breakfast
+                        Breads</label> </div>
+                <div class="form-group"> <input type="checkbox" id="healthy"> <label for="healthy">Healthy
+                        Breads</label>
+                </div>
+            </form>
+        </div>
+        <div class="py-2 border-bottom ml-3">
+            <h6 class="font-weight-bold">Accompainments</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+                <div class="form-group"> <input type="checkbox" id="tea"> <label for="tea">Tea Cakes</label> </div>
+                <div class="form-group"> <input type="checkbox" id="cookies"> <label for="cookies">Cookies</label>
+                </div>
+                <div class="form-group"> <input type="checkbox" id="pastries"> <label for="pastries">Pastries</label>
+                </div>
+                <div class="form-group"> <input type="checkbox" id="dough"> <label for="dough">Cookie Dough</label>
+                </div>
+                <div class="form-group"> <input type="checkbox" id="choco"> <label for="choco">Chocolates</label> </div>
+            </form>
+        </div>
+        <div class="py-2 ml-3">
+            <h6 class="font-weight-bold">Top Offers</h6>
+            <div id="orange"><span class="fa fa-minus"></span></div>
+            <form>
+                <div class="form-group"> <input type="checkbox" id="25off"> <label for="25">25% off</label> </div>
+                <div class="form-group"> <input type="checkbox" id="5off"> <label for="5off" id="off">5% off on artisan
+                        breads</label> </div>
+            </form>
+        </div>
+    </section>
+    <!-- products section -->
+    <section id="products" class="bg-white">
+        <div class="container">
+            <div class="d-flex flex-row">
+                <div class="text-muted m-2" id="res">Showing 44 results</div>
+                <div class="ml-auto mr-lg-4">
+                    <div id="sorting" class="border rounded p-1 m-1"> <span class="text-muted">Sort by</span> <select
+                            name="sort" id="sort">
+                            <option value="popularity"><b>Popularity</b></option>
+                            <option value="prcie"><b>Price</b></option>
+                            <option value="rating"><b>Rating</b></option>
+                        </select> </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+                    <div class="card"> <img class="card-img-top"
+                            src="https://themewagon.github.io/ultras/images/selling-products15.jpg">
+                        <div class="card-body">
+                            <h5><b>Multi Grain Bread</b> </h5>
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-muted">₹110/loaf</div>
+                                <div class="ml-auto"> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1
+                                        loaf</span> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-minus" id="orange"></span></button> </div>
+                            </div> <button class="btn w-100 rounded my-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+                    <div class="card"> <img class="card-img-top"
+                            src="https://themewagon.github.io/ultras/images/selling-products13.jpg">
+                        <div class="card-body">
+                            <h5><b>Bagels</b> </h5>
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-muted">₹35/piece</div>
+                                <div class="ml-auto"> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1
+                                        pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus"
+                                            id="orange"></span></button> </div>
+                            </div> <button class="btn w-100 rounded my-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+                    <div class="card"> <img class="card-img-top"
+                            src="https://themewagon.github.io/ultras/images/selling-products8.jpg">
+                        <div class="card-body">
+                            <h5><b>White Bread</b> </h5>
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-muted">₹80/loaf</div>
+                                <div class="ml-auto"> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1
+                                        loaf</span> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-minus" id="orange"></span></button> </div>
+                            </div> <button class="btn w-100 rounded my-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+                    <div class="card"> <img class="card-img-top"
+                            src="https://themewagon.github.io/ultras/images/selling-products4.jpg">
+                        <div class="card-body">
+                            <h5><b>Baguette</b> </h5>
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-muted">₹160/piece</div>
+                                <div class="ml-auto"> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1
+                                        pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus"
+                                            id="orange"></span></button> </div>
+                            </div> <button class="btn w-100 rounded my-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+                    <div class="card"> <img class="card-img-top"
+                            src="https://themewagon.github.io/ultras/images/selling-products2.jpg">
+                        <div class="card-body">
+                            <h5><b>Masala Bun</b> </h5>
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-muted">₹85/piece</div>
+                                <div class="ml-auto"> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-plus" id="orange"></span></button> <span class="px-sm-1">1
+                                        pc</span> <button class="border rounded bg-white sign"><span class="fa fa-minus"
+                                            id="orange"></span></button> </div>
+                            </div> <button class="btn w-100 rounded my-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
+                    <div class="card d-relative"> <img class="card-img-top"
+                            src="https://themewagon.github.io/ultras/images/selling-products3.jpg">
+                        <div class="card-body">
+                            <h5><b>Croissant</b> </h5>
+                            <div class="rounded bg-white discount" id="orange">10% off</div>
+                            <div class="d-flex flex-row my-2">
+                                <div class="text-muted price"><del>₹55</del>₹45/piece</div>
+                                <div class="ml-auto"> <button class="border rounded bg-white sign"><span
+                                            class="fa fa-plus" id="orange"></span></button> <span>1pc</span> <button
+                                        class="border rounded bg-white sign"><span class="fa fa-minus"
+                                            id="orange"></span></button> </div>
+                            </div> <button class="btn w-100 rounded my-2">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                    <!--headin5_amrc-->
+                    <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum
+                        has been the industry's standard dummy text ever since the 1500s</p>
+                    <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+                    <p><i class="fa fa-phone"></i> +91-9999878398 </p>
+                    <p><i class="fa fa fa-envelope"></i> info@example.com </p>
+
+
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                    <!--headin5_amrc-->
+                    <ul class="footer_ul_amrc">
+                        <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                        <li><a href="http://webenlance.com">Clipping Path</a></li>
+                        <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                        <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                        <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                        <li><a href="http://webenlance.com">Image Cropping</a></li>
+                    </ul>
+                    <!--footer_ul_amrc ends here-->
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                    <!--headin5_amrc-->
+                    <ul class="footer_ul_amrc">
+                        <li><a href="http://webenlance.com">Remove Background</a></li>
+                        <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                        <li><a href="http://webenlance.com">Logo Design</a></li>
+                        <li><a href="http://webenlance.com">Vectorization</a></li>
+                        <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                        <li><a href="http://webenlance.com">Image Cropping</a></li>
+                    </ul>
+                    <!--footer_ul_amrc ends here-->
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                    <!--headin5_amrc ends here-->
+
+                    <ul class="footer_ul2_amrc">
+                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                            <p>Lorem Ipsum is simply dummy text of the printing...<a
+                                    href="#">https://www.lipsum.com/</a>
+                            </p>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                            <p>Lorem Ipsum is simply dummy text of the printing...<a
+                                    href="#">https://www.lipsum.com/</a>
+                            </p>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                            <p>Lorem Ipsum is simply dummy text of the printing...<a
+                                    href="#">https://www.lipsum.com/</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <!--footer_ul2_amrc ends here-->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <ul class="foote_bottom_ul_amrc">
+                <li><a href="http://webenlance.com">Home</a></li>
+                <li><a href="http://webenlance.com">About</a></li>
+                <li><a href="http://webenlance.com">Services</a></li>
+                <li><a href="http://webenlance.com">Pricing</a></li>
+                <li><a href="http://webenlance.com">Blog</a></li>
+                <li><a href="http://webenlance.com">Contact</a></li>
+            </ul>
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="text-center">Copyright @2017 | Designed With by <a href="#">Your Company Name</a></p>
+
+            <ul class="social_footer_ul">
+                <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

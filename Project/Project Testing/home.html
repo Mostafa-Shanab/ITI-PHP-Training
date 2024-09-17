@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project E-Commerce</title>
+    <style>
+        :root {
+            --blue: #6995B1;
+            --white: #ffffff;
+        }
+
+        ::selection {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0px;
+        }
+
+        a.navbar-brand {
+            float: left;
+            height: 50px;
+            padding: 15px 15px;
+            font-size: 18px;
+            line-height: 20px;
+            text-decoration: none;
+            color: orangered;
+            font-family: cursive;
+            font-weight: 700;
+
+        }
+
+        nav.main-navigation {
+            position: relative;
+        }
+
+        nav.main-navigation ul.nav-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+            text-align: right;
+        }
+
+        .nav-list li.nav-list-item {
+            display: inline-block;
+            line-height: 40px;
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        a.nav-link {
+            text-decoration: none;
+            font-size: 18px;
+            font-family: sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            color: #404040;
+        }
+
+        .col_white_amrc {
+            color: #FFF;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #263238;
+            min-height: 250px;
+            padding: 10px 0px 25px 0px;
+        }
+
+        .pt2 {
+            padding-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #CCC;
+            padding-bottom: 0px;
+            margin-bottom: 8px;
+        }
+
+        .mb10 {
+            padding-bottom: 15px;
+        }
+
+        .footer_ul_amrc {
+            margin: 0px;
+            list-style-type: none;
+            font-size: 14px;
+            padding: 0px 0px 10px 0px;
+        }
+
+        .footer_ul_amrc li {
+            padding: 0px 0px 5px 0px;
+        }
+
+        .footer_ul_amrc li a {
+            color: #CCC;
+        }
+
+        .footer_ul_amrc li a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .fleft {
+            float: left;
+        }
+
+        .padding-right {
+            padding-right: 10px;
+        }
+
+        .footer_ul2_amrc {
+            margin: 0px;
+            list-style-type: none;
+            padding: 0px;
+        }
+
+        .footer_ul2_amrc li p {
+            display: table;
+        }
+
+        .footer_ul2_amrc li a:hover {
+            text-decoration: none;
+        }
+
+        .footer_ul2_amrc li i {
+            margin-top: 5px;
+        }
+
+        .bottom_border {
+            border-bottom: 1px solid #323f45;
+            padding-bottom: 20px;
+        }
+
+        .foote_bottom_ul_amrc {
+            list-style-type: none;
+            padding: 0px;
+            display: table;
+            margin-top: 10px;
+            margin-right: auto;
+            margin-bottom: 10px;
+            margin-left: auto;
+        }
+
+        .foote_bottom_ul_amrc li {
+            display: inline;
+        }
+
+        .foote_bottom_ul_amrc li a {
+            color: #999;
+            margin: 0 12px;
+        }
+
+        .social_footer_ul {
+            display: table;
+            margin: 15px auto 0 auto;
+            list-style-type: none;
+        }
+
+        .social_footer_ul li {
+            padding-left: 20px;
+            padding-top: 10px;
+            float: left;
+        }
+
+        .social_footer_ul li a {
+            color: #CCC;
+            border: 1px solid #CCC;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .social_footer_ul li i {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+        }
+
+        .product-image5 .pic-1,
+        .product-image5 .pic-2 {
+            backface-visibility: hidden;
+            transition: all .5s ease 0s
+        }
+
+        .product-grid5 {
+            font-family: Poppins, sans-serif;
+            position: relative
+        }
+
+        .product-grid5 .product-image5 {
+            overflow: hidden;
+            position: relative
+        }
+
+        .product-grid5 .product-image5 a {
+            display: block
+        }
+
+        .product-grid5 .product-image5 img {
+            width: 100%;
+            height: auto
+        }
+
+        .product-image5 .pic-1 {
+            opacity: 1
+        }
+
+        .product-grid5:hover .product-image5 .pic-1 {
+            opacity: 0
+        }
+
+        .product-image5 .pic-2 {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0
+        }
+
+        .product-grid5:hover .product-image5 .pic-2 {
+            opacity: 1
+        }
+
+        .product-grid5 .social {
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 10px;
+            right: 10px
+        }
+
+        .product-grid5 .social li {
+            display: block;
+            margin: 0 0 10px;
+            transition: all .5s
+        }
+
+        .product-grid5 .social li:nth-child(2) {
+            opacity: 0;
+            transform: translateY(-50px)
+        }
+
+        .product-grid5:hover .social li:nth-child(2) {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .product-grid5 .social li:nth-child(3) {
+            opacity: 0;
+            transform: translateY(-50px)
+        }
+
+        .product-grid5:hover .social li:nth-child(3) {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: .2s
+        }
+
+        .product-grid5 .social li a {
+            color: #888;
+            background: #fff;
+            font-size: 14px;
+            text-align: center;
+            line-height: 40px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: block;
+            transition: .5s ease 0s
+        }
+
+        .product-grid5 .social li a:hover {
+            color: #fff;
+            background: #1e3799
+        }
+
+        .product-grid5 .select-options {
+            color: #777;
+            background-color: #fff;
+            font-size: 13px;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 15px 5px;
+            margin: 0 auto;
+            opacity: 0;
+            display: block;
+            position: absolute;
+            width: 92%;
+            left: 0;
+            bottom: -100px;
+            right: 0;
+            transition: .5s ease 0s
+        }
+
+        .product-grid5 .select-options:hover {
+            color: #fff;
+            background-color: #1e3799;
+            text-decoration: none
+        }
+
+        .product-grid5:hover .select-options {
+            opacity: 1;
+            bottom: 10px
+        }
+
+        .product-grid5 .product-content {
+            padding: 20px 10px
+        }
+
+        .product-grid5 .title {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin: 0 0 10px;
+            transition: all .3s ease 0s
+        }
+
+        .product-grid5 .title a {
+            color: #222
+        }
+
+        .product-grid5 .title a:hover {
+            color: #1e3799
+        }
+
+        .product-grid5 .price {
+            color: #222;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px
+        }
+
+        @media only screen and (max-width:990px) {
+            .product-grid5 {
+                margin-bottom: 30px
+            }
+        }
+
+        .bg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            color: #FFFFFF;
+            padding: 90px 90px;
+        }
+
+        .col {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .container-fluid {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .bg-left {
+            background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
+        }
+
+        .bg-right {
+            background: url("https://unsplash.imgix.net/photo-1416339442236-8ceb164046f8?q=75&fm=jpg&s=8eb83df8a744544977722717b1ea4d09");
+        }
+
+        .col-1,
+        .col-2,
+        .col-3,
+        .col-4,
+        .col-5,
+        .col-6,
+        .col-7,
+        .col-8,
+        .col-9,
+        .col-10,
+        .col-11,
+        .col-12,
+        .col,
+        .col-auto,
+        .col-sm-1,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm,
+        .col-sm-auto,
+        .col-md-1,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md,
+        .col-md-auto,
+        .col-lg-1,
+        .col-lg-2,
+        .col-lg-3,
+        .col-lg-4,
+        .col-lg-5,
+        .col-lg-6,
+        .col-lg-7,
+        .col-lg-8,
+        .col-lg-9,
+        .col-lg-10,
+        .col-lg-11,
+        .col-lg-12,
+        .col-lg,
+        .col-lg-auto,
+        .col-xl-1,
+        .col-xl-2,
+        .col-xl-3,
+        .col-xl-4,
+        .col-xl-5,
+        .col-xl-6,
+        .col-xl-7,
+        .col-xl-8,
+        .col-xl-9,
+        .col-xl-10,
+        .col-xl-11,
+        .col-xl-12,
+        .col-xl,
+        .col-xl-auto {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <p style="text-align: center;">
+        <a href="https://themewagon.github.io/ultras/index.html" target="_blank">Real Website</a>
+    </p>
+    <!-- start of navbar header -->
+    <table style="width: 96%; font-size: 20px; color: #8D8D8D; margin: 5px 0 5px 55px;">
+        <tr>
+            <td>Let's Talk! <b>+57 444 11 00 35</b></td>
+            <td>Free shipping on a purchase value of $200</td>
+            <td style="user-select: none;"><a href="" style="color: #8D8D8D; padding-right: 9px;"><i
+                        class="fa-regular fa-user"></i></a> <a href="" style="color: #8D8D8D; padding-right: 9px;"><i
+                        class="fa-regular fa-cart-plus"></i></a> <a href=""
+                    style="color: #8D8D8D; padding-right: 9px;"><i class="fa-regular fa-heart"></i></a> <a href=""
+                    style="color: #8D8D8D; padding-right: 9px;"><i class="fa-solid fa-magnifying-glass"></i></a></td>
+        </tr>
+    </table>
+    <hr>
+    <nav class="main-navigation">
+        <div class="navbar-header animated fadeInUp" style="margin-left: 35px;">
+            <a class="navbar-brand" href="home.html"><img src="https://themewagon.github.io/ultras/images/main-logo.png"
+                    alt=""></a>
+        </div>
+        <ul class="nav-list" style="margin-right: 55px;">
+            <li class="nav-list-item">
+                <a href="home.html" class="nav-link" style="color: #6995B1;">Home</a>
+                <style>
+                    .nav-link:hover {
+                        color: #6995B1;
+                    }
+                </style>
+            </li>
+            <li class="nav-list-item">
+                <a href="about.html" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="category.html" class="nav-link">Category</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="product_site.html" class="nav-link">Product Site</a>
+            </li>
+            <li class="nav-list-item">
+                <a href="contact_us.html" class="nav-link">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- end of navbar header -->
+
+    <br>
+
+    <!--start of first slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="position: relative;">
+                <img src="data:image/jpeg;base64,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"
+                    class="d-block w-100" alt="..." height="700px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1
+                        style="color: black; font-size: 100px; bottom: 300px; left: -100px; position: absolute; text-align: left;">
+                        Summer<br>Collection
+                    </h1>
+                    <p style="color: black; bottom: 150px; left: -100px; position: absolute;">Some representative
+                        placeholder content for the first slideasdasdasdasdasdasdasasddasdasd.</p>
+                    <button style="padding: 25px 55px; position: absolute; left: -100px; bottom: 50px;">Shop It
+                        Now</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="data:image/jpeg;base64,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"
+                    class="d-block w-100" alt="..." height="700px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1
+                        style="color: black; font-size: 100px; bottom: 300px; left: -100px; position: absolute; text-align: left;">
+                        Casual<br>Collection
+                    </h1>
+                    <p style="color: black; bottom: 150px; left: -100px; position: absolute;">Some representative
+                        placeholder content for the first slideasdasdasdasdasdasdasasddasdasd.</p>
+                    <button style="padding: 25px 55px; position: absolute; left: -100px; bottom: 50px;">Shop It
+                        Now</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </button>
+    </div>
+    <!--end of first slider -->
+
+    <br><br><br><br><br>
+
+    <h1 style="display: inline; margin-left: 55px;">Featured Products</h1>
+    <a href="product_site.html" style="float: right; margin-right: 55px;">View All Products</a>
+
+    <br><br><br><br><br>
+
+    <!-- Start Products -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-1.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-3.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-4.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Women's Shirt</a></h3>
+                        <div class="price">$10.00 - $12.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-5.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-6.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-7.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-8.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Products -->
+
+    <br><br><br><br><br>
+
+    <!-- images -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="bg bg-left">
+                    <h2>Create your snippet's HTML, CSS and Javascript in the editor tabs</h2>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="bg bg-right">
+                    <h2>Create your snippet's HTML, CSS and Javascript in the editor tabs</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <!-- images -->
+    <h1 style="margin-left: 35px;">Get 25% Off Discount Coupons</h1>
+    <br>
+    <p style="margin-left: 35px; font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictumst
+        amet, metus, sit massa posuere maecenas. At
+        tellus ut
+        nunc amet vel <br>egestas.
+    </p>
+    <h1 style="margin-left: 35px;">Best Selling Products</h1>
+
+    <!-- Start Products -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-1.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-3.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-4.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Women's Shirt</a></h3>
+                        <div class="price">$10.00 - $12.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-5.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-6.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-7.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-8.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-1.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-3.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-4.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Women's Shirt</a></h3>
+                        <div class="price">$10.00 - $12.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-5.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-6.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-7.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-8.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-1.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-2.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-3.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-4.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Women's Shirt</a></h3>
+                        <div class="price">$10.00 - $12.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-5.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-6.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid5">
+                    <div class="product-image5">
+                        <a href="#">
+                            <img class="pic-1"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-7.jpg">
+                            <img class="pic-2"
+                                src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-8.jpg">
+                        </a>
+                        <ul class="social">
+                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a href="#" class="select-options"><i class="fa fa-arrow-right"></i> Select Options</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">Men's Sweat Shirt</a></h3>
+                        <div class="price">$11.00 - $15.00</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Products -->
+
+
+
+    <!-- start of footer -->
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                    <!--headin5_amrc-->
+                    <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum
+                        has been the industry's standard dummy text ever since the 1500s</p>
+                    <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+                    <p><i class="fa fa-phone"></i> +91-9999878398 </p>
+                    <p><i class="fa fa fa-envelope"></i> info@example.com </p>
+
+
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                    <!--headin5_amrc-->
+                    <ul class="footer_ul_amrc">
+                        <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                        <li><a href="http://webenlance.com">Clipping Path</a></li>
+                        <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                        <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                        <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                        <li><a href="http://webenlance.com">Image Cropping</a></li>
+                    </ul>
+                    <!--footer_ul_amrc ends here-->
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                    <!--headin5_amrc-->
+                    <ul class="footer_ul_amrc">
+                        <li><a href="http://webenlance.com">Remove Background</a></li>
+                        <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                        <li><a href="http://webenlance.com">Logo Design</a></li>
+                        <li><a href="http://webenlance.com">Vectorization</a></li>
+                        <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                        <li><a href="http://webenlance.com">Image Cropping</a></li>
+                    </ul>
+                    <!--footer_ul_amrc ends here-->
+                </div>
+
+
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                    <!--headin5_amrc ends here-->
+
+                    <ul class="footer_ul2_amrc">
+                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                            <p>Lorem Ipsum is simply dummy text of the printing...<a
+                                    href="#">https://www.lipsum.com/</a>
+                            </p>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                            <p>Lorem Ipsum is simply dummy text of the printing...<a
+                                    href="#">https://www.lipsum.com/</a>
+                            </p>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+                            <p>Lorem Ipsum is simply dummy text of the printing...<a
+                                    href="#">https://www.lipsum.com/</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <!--footer_ul2_amrc ends here-->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <ul class="foote_bottom_ul_amrc">
+                <li><a href="http://webenlance.com">Home</a></li>
+                <li><a href="http://webenlance.com">About</a></li>
+                <li><a href="http://webenlance.com">Services</a></li>
+                <li><a href="http://webenlance.com">Pricing</a></li>
+                <li><a href="http://webenlance.com">Blog</a></li>
+                <li><a href="http://webenlance.com">Contact</a></li>
+            </ul>
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="text-center">Copyright @2017 | Designed With by <a href="#">Your Company Name</a></p>
+
+            <ul class="social_footer_ul">
+                <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+
+    </footer>
+    <!-- end of footer -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

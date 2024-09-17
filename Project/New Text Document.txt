@@ -1,0 +1,7 @@
+home:done
+login:done
+register:done
+about:done
+category:done
+contact_us:done
+product_site:done
